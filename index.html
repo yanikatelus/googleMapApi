@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="en-us">
+<head>
+   <meta charset="utf-8" />
+   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+   <title>Geo Location</title>
+   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+   <style>
+      html { height: 100%;  background: linear-gradient(#84fab0, #8fd3f4) no-repeat;}
+      body { height: 100%; margin: 0; padding: 0;}
+      #map-canvas { height: 75%; width:92%; margin: 4%;}
+   </style>
+      <script type="text/javascript">
+
+          function GetMap() {
+
+             var Latitude = document.getElementById("latitude").value;
+
+             var Longitude = document.getElementById("longitude").value;
+
+             var mapOptions = {
+
+                center: new google.maps.LatLng(Latitude, Longitude),
+
+                zoom: 8,
+
+                mapTypeId: google.maps.MapTypeId.ROADMAP
+
+             }
+
+             var map = new google.maps.Map(document.getElementById("MapCanvas"),
+
+             mapOptions);
+
+          }
+       </script>
+    <script src="cordova.js"></script>
+    <script src="js/index.js"></script>
+           
+    
+   
+</head>
+<body >
+   <script> time();</script>    
+    <div id="info" style="padding-top: 3%; padding-left: 3%;">
+      <div style="align-items: center;">
+         <h1><span id='description' style="align-items: center;"></span><br></h1>
+         <h1><span id='temp'></span>&#8457;  </h1>
+      </div>
+
+        Wind: <span id='wind'></span><br>
+        Humidity:   <span id='humidity'></span><br>
+        Visibility: <span id='visibility'></span><br>
+        Sunrise:   <span id='sunrise'></span><br>
+        Sunset: <span id='sunset'></span><br>
+        <br><br>
+        lat: <span id='latitude' style ="font-weight: bold;"></span><br>
+        lon: <span id='longitude' style ="font-weight: bold; "></span><br>
+        Alt: <span id='Altitude' style ="font-weight: bold;"></span>
+            <span id='altitude'></span>
+    </div>
+
+    <div id="map-canvas"><h3>Loading map. Please wait...</h3></div>
+<!--    open -->
+</body>
+</html>
